@@ -11,7 +11,7 @@ pub fn muln(n: u32, mat: TriMat) -> PatternMat {
 
     drop(mat);
 
-    for _ in 0..n {
+    for _ in 1..n {
         result = &result * &csc;
     }
 
