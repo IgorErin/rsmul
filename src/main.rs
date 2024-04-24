@@ -71,6 +71,12 @@ fn main() {
         println!("start: {:?}", take_name(&src_path));
 
         let dest_path = mk_result_path(&src_path, args.count, &get_current_dir());
+        // if exists than nothing to do
+        if Path::exists(&dest_path) {
+            println!("exist: {:?}", dest_path);
+            continue;
+        }
+
         run_path(src_path, args.count, &dest_path);
 
         println!("end with: {:?}", take_name(&dest_path));
